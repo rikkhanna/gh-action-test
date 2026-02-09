@@ -10,3 +10,12 @@ jobs:
         run: echo "Bye!"
       - name: Setup `packer`
         uses: hashicorp/setup-packer@main
+  build-image:
+    runs-on: ubuntu-22.04
+    permissions:
+        contents: 'read'
+        id-token: 'write'
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
